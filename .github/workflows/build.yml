@@ -22,9 +22,10 @@ jobs:
 
       - name: Build firmware
         run: platformio run
+        working-directory: SmartEVSE-3   # <-- hier aanpassen naar jouw map
 
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: SmartEVSE-firmware
-          path: .pio/build/**/firmware.bin
+          path: SmartEVSE-3/.pio/build/**/firmware.bin  # <-- ook hier de map aanpassen
